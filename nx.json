@@ -7,5 +7,15 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "e-appointment-e2e": {
+      "tags": []
+    },
+    "e-appointment": {
+      "tags": []
+    },
+    "e-appointment-serve": {
+      "tags": []
+    }
+  }
 }

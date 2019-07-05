@@ -2,13 +2,208 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "",
-  "projects": {},
+  "projects": {
+    "e-appointment": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/workspace:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/e-appointment",
+      "sourceRoot": "apps/e-appointment/src",
+      "prefix": "e-app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/e-appointment",
+            "index": "apps/e-appointment/src/index.html",
+            "main": "apps/e-appointment/src/main.ts",
+            "polyfills": "apps/e-appointment/src/polyfills.ts",
+            "tsConfig": "apps/e-appointment/tsconfig.app.json",
+            "assets": [
+              "apps/e-appointment/src/favicon.ico",
+              "apps/e-appointment/src/assets"
+            ],
+            "styles": [
+              "apps/e-appointment/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/e-appointment/src/environments/environment.ts",
+                  "with": "apps/e-appointment/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "e-appointment:build",
+            "proxyConfig": "apps/e-appointment/proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "e-appointment:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "e-appointment:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/e-appointment/tsconfig.app.json",
+              "apps/e-appointment/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/e-appointment/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/e-appointment/jest.config.js",
+            "tsConfig": "apps/e-appointment/tsconfig.spec.json",
+            "setupFile": "apps/e-appointment/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "e-appointment-e2e": {
+      "root": "apps/e-appointment-e2e",
+      "sourceRoot": "apps/e-appointment-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/e-appointment-e2e/cypress.json",
+            "tsConfig": "apps/e-appointment-e2e/tsconfig.e2e.json",
+            "devServerTarget": "e-appointment:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "e-appointment:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/e-appointment-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/e-appointment-e2e/**"
+            ]
+          }
+        }
+      }
+    },
+    "e-appointment-serve": {
+      "root": "apps/e-appointment-serve",
+      "sourceRoot": "apps/e-appointment-serve/src",
+      "projectType": "application",
+      "prefix": "e-appointment-serve",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/e-appointment-serve",
+            "main": "apps/e-appointment-serve/src/main.ts",
+            "tsConfig": "apps/e-appointment-serve/tsconfig.app.json",
+            "assets": [
+              "apps/e-appointment-serve/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/e-appointment-serve/src/environments/environment.ts",
+                  "with": "apps/e-appointment-serve/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "e-appointment-serve:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/e-appointment-serve/tsconfig.app.json",
+              "apps/e-appointment-serve/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/e-appointment-serve/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/e-appointment-serve/jest.config.js",
+            "tsConfig": "apps/e-appointment-serve/tsconfig.spec.json"
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "warnings": {
       "typescriptMismatch": false,
       "versionMismatch": false
     },
-    "defaultCollection": "@nrwl/workspace"
+    "defaultCollection": "@nrwl/angular"
   },
-  "schematics": {}
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "e-appointment"
 }
