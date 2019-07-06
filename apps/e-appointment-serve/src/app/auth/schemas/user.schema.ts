@@ -1,7 +1,11 @@
 import { Schema } from 'mongoose';
 
-export const CatSchema = new Schema({
+export const userSchema = new Schema({
   name: String,
   age: Number,
   breed: String,
-})
+  numberOfAppointments: Number,
+  password: String,
+  username: String,
+  email: String,
+});
