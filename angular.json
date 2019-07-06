@@ -27,6 +27,7 @@
               "apps/e-appointment/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "apps/e-appointment/src/styles.scss"
             ],
             "scripts": []
@@ -184,6 +185,35 @@
           "options": {
             "jestConfig": "apps/e-appointment-serve/jest.config.js",
             "tsConfig": "apps/e-appointment-serve/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "a-auth-shared": {
+      "root": "libs/a-auth-shared",
+      "sourceRoot": "libs\\a-auth-shared\\src",
+      "projectType": "library",
+      "schematics": {},
+      "prefix": "a-auth",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs\\a-auth-shared\\tsconfig.lib.json",
+              "libs/a-auth-shared/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs\\a-auth-shared\\**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/a-auth-shared/jest.config.js",
+            "tsConfig": "libs/a-auth-shared/tsconfig.spec.json"
           }
         }
       }

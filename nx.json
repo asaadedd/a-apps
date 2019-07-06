@@ -16,6 +16,9 @@
     },
     "e-appointment-serve": {
       "tags": []
+    },
+    "a-auth-shared": {
+      "tags": []
     }
   }
 }

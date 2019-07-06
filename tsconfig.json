@@ -15,7 +15,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@a-apps/a-auth-shared": ["libs/a-auth-shared/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
