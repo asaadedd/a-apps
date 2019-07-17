@@ -193,7 +193,11 @@
       "root": "libs/a-auth-shared",
       "sourceRoot": "libs\\a-auth-shared\\src",
       "projectType": "library",
-      "schematics": {},
+      "schematics": {
+        "@nrwl/workspace:component": {
+          "style": "scss"
+        }
+      },
       "prefix": "a-auth",
       "architect": {
         "lint": {
