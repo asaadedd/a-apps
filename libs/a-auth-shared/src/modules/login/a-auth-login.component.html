@@ -2,10 +2,13 @@
   <div fxFlex="70%" fxFlex.xs="100%" fxFlex.sm="100%" fxLayoutAlign="center center" fxLayout="row" fxLayoutGap="5%"
        ngClass="login-desktop">
     <div fxFlex="45%" ngClass="login-information" fxLayout="column" fxLayoutGap="3%" fxLayoutAlign="center center">
-      <fa-icon [icon]="['fas', 'calendar-check']" fxFlex="10%" ngClass="company-icon" fxLayoutAlign="flex-start center"></fa-icon>
-      <label fxFlex="30%" fxLayoutAlign="center center">Welcome</label>
-      <label fxFlex="30%" fxLayoutAlign="center center">Welcome</label>
-      <label fxFlex="30%" fxLayoutAlign="center center">Welcome</label>
+      <div fxFlex="15%" ngClass="login-information-welcome" fxLayout="row" fxLayoutGap="3%" fxLayoutAlign="center center">
+        <fa-icon fxFlex="30%" [icon]="['fas', 'calendar-check']" ngClass="company-icon" fxLayoutAlign="end end"></fa-icon>
+        <label fxFlex="20%" fxLayoutAlign="start start">E-app</label>
+        <label fxFlex="50%" fxLayoutAlign="start start">Welcome</label>
+      </div>
+      <label fxFlex="30%" fxLayoutAlign="center center">You can login using an E-app account =></label>
+      <label fxFlex="30%" fxLayoutAlign="center center">You Can login using social media =></label>
     </div>
     <form [formGroup]="loginForm" fxLayout="column" fxLayoutGap="3%" fxFlex="55%" ngClass="login-form" fxLayoutAlign="center center">
       <fa-icon [icon]="['fas', 'user-circle']" fxFlex="15%" ngClass="login-icon"></fa-icon>
@@ -22,6 +25,7 @@
         <button mat-button fxFlex="50%" class="forgot-password"><i>Forgot password?</i></button>
       </div>
       <button mat-button fxFlex="8%" class="sign-in"><i>Don`t have an account? Join us!</i></button>
+
     </form>
   </div>
 
