@@ -1,12 +1,33 @@
 type User {
-  firstName: String!
+  username: String!
+  firstName: String
   lastName: String
-  dateOfBirth: String
   email: String
-  activeAppointments: [Appointment]
-  appointments(startTime: String, endTime: String)
+  dateOfBirth: String
 }
 
-type Appointment {
+type Query {
+  user: User
+}
 
+type LoginResponse {
+  token: String
+  user: User
+  error: Message
+}
+
+type LogoutResponse {
+  message: Message
+  error: Message
+}
+
+type Message {
+  developerMessage: String!
+  userMessage: String!
+}
+
+type Mutation {
+  login(username: String!, password: String!): LoginResponse!
+  register(username: String!, password: String!, firstName: String!, lastName: String!, email: String!, dateOfBirt: String): User
+  logout(token: String!): LogoutResponse
 }
