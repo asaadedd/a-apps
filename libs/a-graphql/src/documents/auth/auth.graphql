@@ -1,0 +1,21 @@
+query getMyInformation() {
+    me() {
+        User
+    }
+}
+
+mutation login() {
+    login() {
+        token
+        status
+        message
+    }
+}
+
+mutation logout() {
+    logout() {
+        status
+        message
+    }
+}
+

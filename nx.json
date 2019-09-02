@@ -19,6 +19,12 @@
     },
     "a-auth-shared": {
       "tags": []
+    },
+    "a-graphql": {
+      "tags": []
+    },
+    "ui-apps": {
+      "tags": []
     }
   }
 }

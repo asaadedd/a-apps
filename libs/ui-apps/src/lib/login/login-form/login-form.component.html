@@ -1,0 +1,26 @@
+<form [formGroup]="loginForm" fxFlex="100%" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5%">
+    <fa-icon [icon]="['fas', 'user-circle']" fxFlex="22%" class="login-icon" fxLayoutAlign="center"></fa-icon>
+    <mat-form-field fxFlex="10%" fxLayoutAlign="center" class="form-field">
+        <fa-icon [icon]="['fa', 'user']" matPrefix></fa-icon>
+        <input type="text" matInput placeholder="Username" formControlName="username">
+    </mat-form-field>
+    <mat-form-field fxFlex="10%" fxLayoutAlign="center" fxLayout="row" class="form-field">
+        <fa-icon fxFlex="8%" [icon]="['fa', 'lock']" matPrefix></fa-icon>
+        <input fxFlex="8%" type="password" matInput placeholder="Password" formControlName="password">
+    </mat-form-field>
+    <div fxFlex="8%" fxLayout="row" fxLayoutAlign="stretch center" class="form-buttons">
+        <button mat-raised-button fxFlex="50%"
+                (click)="triggerLogin()"
+                [disabled]="loginForm.invalid">
+            Login
+        </button>
+        <button mat-button fxFlex="50%"
+                (click)="triggerForgotPassword()">
+            <em>Forgot password?</em>
+        </button>
+    </div>
+    <button mat-button fxFlex="8%" class="form-buttons"
+            (click)="triggerRegister()">
+        <em>Don`t have an account? Join us! </em>
+    </button>
+</form>

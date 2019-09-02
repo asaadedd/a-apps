@@ -1,0 +1,18 @@
+type OperationResponse {
+    status: OperationStatus!
+    message: Message!
+}
+
+enum OperationStatus {
+    FAILED,
+    SUCCESSFUL,
+    IN_PROGRESS
+}
+
+type Message {
+    code: String!
+    value: String
+    developerValue: String
+    error: String
+    developerError: String
+}

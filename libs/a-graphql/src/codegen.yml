@@ -1,0 +1,9 @@
+overwrite: true
+documents: ./libs/a-graphql/src/documents/**/*.graphql
+schema: ./libs/a-graphql/src/schemas/**/*.graphql
+generates:
+  ./libs/a-graphql/src/index.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-apollo-angular

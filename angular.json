@@ -84,10 +84,7 @@
               "apps/e-appointment/tsconfig.app.json",
               "apps/e-appointment/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/e-appointment/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/e-appointment/**"]
           }
         },
         "test": {
@@ -122,10 +119,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/e-appointment-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/e-appointment-e2e/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/e-appointment-e2e/**"]
           }
         }
       }
@@ -143,9 +137,7 @@
             "outputPath": "dist/apps/e-appointment-serve",
             "main": "apps/e-appointment-serve/src/main.ts",
             "tsConfig": "apps/e-appointment-serve/tsconfig.app.json",
-            "assets": [
-              "apps/e-appointment-serve/src/assets"
-            ]
+            "assets": ["apps/e-appointment-serve/src/assets"]
           },
           "configurations": {
             "production": {
@@ -174,10 +166,7 @@
               "apps/e-appointment-serve/tsconfig.app.json",
               "apps/e-appointment-serve/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/e-appointment-serve/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/e-appointment-serve/**"]
           }
         },
         "test": {
@@ -207,10 +196,7 @@
               "libs\\a-auth-shared\\tsconfig.lib.json",
               "libs/a-auth-shared/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs\\a-auth-shared\\**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs\\a-auth-shared\\**"]
           }
         },
         "test": {
@@ -219,6 +205,62 @@
             "jestConfig": "libs/a-auth-shared/jest.config.js",
             "tsConfig": "libs/a-auth-shared/tsconfig.spec.json"
           }
+        }
+      }
+    },
+    "a-graphql": {
+      "root": "libs/a-graphql",
+      "sourceRoot": "libs\\a-graphql\\src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs\\a-graphql\\tsconfig.lib.json",
+              "libs/a-graphql/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs\\a-graphql\\**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/a-graphql/jest.config.js",
+            "tsConfig": "libs/a-graphql/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "ui-apps": {
+      "projectType": "library",
+      "root": "libs/ui-apps",
+      "sourceRoot": "libs/ui-apps/src",
+      "prefix": "a-apps",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-apps/tsconfig.lib.json",
+              "libs/ui-apps/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-apps/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-apps/jest.config.js",
+            "tsConfig": "libs/ui-apps/tsconfig.spec.json",
+            "setupFile": "libs/ui-apps/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
         }
       }
     }

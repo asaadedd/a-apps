@@ -1,0 +1,30 @@
+type Query {
+    me: User!
+}
+
+type Mutation {
+    login: LoginResponse!
+    logout: OperationResponse!
+    createUser(user: User!): OperationResponse!
+}
+
+type LoginResponse implements OperationResponse {
+    token: Token!
+}
+
+type Token {
+    type: TokenTypes!
+    value: String!
+}
+
+enum TokenTypes {
+    BEARER,
+    REFRESH
+}
+
+type User {
+    firstName: String!
+    lastName: String
+    dateOfBirth: String
+    email: String
+}

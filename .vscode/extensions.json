@@ -3,6 +3,15 @@
     "nrwl.angular-console",
     "angular.ng-template",
     "ms-vscode.vscode-typescript-tslint-plugin",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "eamodio.gitlens",
+    "msjsdiag.debugger-for-chrome",
+    "kumar-harsh.graphql-for-vscode",
+    "eg2.vscode-npm-script",
+    "johnpapa.angular2",
+    "steoates.autoimport",
+    "ashinzekene.nestjs",
+    "alexiv.vscode-angular2-files",
+    "eg2.vscode-npm-script"
   ]
 }
