@@ -15,12 +15,12 @@
             Login
         </button>
         <button mat-button fxFlex="50%"
-                (click)="triggerForgotPassword()">
+                (click)="forgotPassword.emit()">
             <em>Forgot password?</em>
         </button>
     </div>
     <button mat-button fxFlex="8%" class="form-buttons"
-            (click)="triggerRegister()">
+            (click)="register.emit()">
         <em>Don`t have an account? Join us! </em>
     </button>
 </form>

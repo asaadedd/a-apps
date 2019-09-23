@@ -5,10 +5,11 @@ type Query {
 type Mutation {
     login: LoginResponse!
     logout: OperationResponse!
-    createUser(user: User!): OperationResponse!
+    createUser(firstName: String!, lastName: String!, email: String!, dateOfBirth: String): OperationResponse!
+    resetPassword(username: String!): OperationResponse!
 }
 
-type LoginResponse implements OperationResponse {
+type LoginResponse {
     token: Token!
 }
 
@@ -24,7 +25,7 @@ enum TokenTypes {
 
 type User {
     firstName: String!
-    lastName: String
+    lastName: String!
+    email: String!
     dateOfBirth: String
-    email: String
 }

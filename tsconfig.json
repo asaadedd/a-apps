@@ -17,8 +17,11 @@
     "baseUrl": ".",
     "paths": {
       "@a-apps/a-auth": ["libs/a-auth/src/index.ts"],
+      "@a-apps/a-auth/*": ["libs/a-auth/src/*"],
       "@a-apps/a-graphql": ["libs/a-graphql/src/index.ts"],
-      "@a-apps/ui-apps": ["libs/ui-apps/src/index.ts"]
+      "@a-apps/ui-apps": ["libs/ui-apps/src/index.ts"],
+      "@a-apps/a-operation": ["libs/a-operation/src/index.ts"],
+      "@a-apps/a-messages": ["libs/a-messages/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

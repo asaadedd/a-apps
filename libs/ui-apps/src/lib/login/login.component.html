@@ -1,8 +1,9 @@
 <div fxFlex="100%" fxLayoutAlign="center stretch" fxLayout="column">
-    <div fxFlex="70%" fxFlex.xs="100%" fxFlex.sm="100%" fxLayout="row" fxLayoutAlign="center stretch">
-        <ui-apps-application-login-information fxFlex="25%" fxHide.xs="true" fxHide.sm="true" class="login-information">
+    <div fxFlex="70%" fxFlex.xs="100%" fxFlex.sm="100%" fxFlex.md="100%" fxLayout="row" fxLayoutAlign="center stretch">
+        <ui-apps-application-login-information fxFlex="25%" fxHide.xs="true" fxHide.sm="true" fxFlex.md="50%" class="login-information">
         </ui-apps-application-login-information>
-        <ui-apps-login-form fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="100%" class="login-form">
+        <ui-apps-login-form fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="100%" fxFlex.md="50%" class="login-form"
+                            (register)="register.emit()" (login)="login.emit($event)" (forgotPassword)="forgotPassword.emit()">
         </ui-apps-login-form>
     </div>
 </div>

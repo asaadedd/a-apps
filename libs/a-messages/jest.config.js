@@ -1,0 +1,9 @@
+module.exports = {
+  name: 'a-messages',
+  preset: '../../jest.config.js',
+  coverageDirectory: '../../coverage/libs/a-messages',
+  snapshotSerializers: [
+    'jest-preset-angular/AngularSnapshotSerializer.js',
+    'jest-preset-angular/HTMLCommentSerializer.js'
+  ]
+};

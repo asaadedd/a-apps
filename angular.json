@@ -263,6 +263,68 @@
           "styleext": "scss"
         }
       }
+    },
+    "a-operation": {
+      "projectType": "library",
+      "root": "libs/a-operation",
+      "sourceRoot": "libs/a-operation/src",
+      "prefix": "a-apps",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/a-operation/tsconfig.lib.json",
+              "libs/a-operation/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/a-operation/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/a-operation/jest.config.js",
+            "tsConfig": "libs/a-operation/tsconfig.spec.json",
+            "setupFile": "libs/a-operation/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "a-messages": {
+      "projectType": "library",
+      "root": "libs/a-messages",
+      "sourceRoot": "libs/a-messages/src",
+      "prefix": "a-apps",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/a-messages/tsconfig.lib.json",
+              "libs/a-messages/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/a-messages/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/a-messages/jest.config.js",
+            "tsConfig": "libs/a-messages/tsconfig.spec.json",
+            "setupFile": "libs/a-messages/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

@@ -1,0 +1,12 @@
+<div fxFlex="100%" fxLayoutAlign="center stretch" fxLayout="column">
+    <div fxFlex="70%" fxFlex.xs="100%" fxFlex.sm="100%" fxFlex.md="100%" fxLayout="row" fxLayoutAlign="center stretch">
+        <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%" fxFlex.md="50%" class="register-form">
+            <form [formGroup]="registerForm" fxFlex="100%" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5%">
+                <mat-form-field fxFlex="10%" fxLayoutAlign="center" fxLayout="row" class="form-field" *ngIf="parameters.firstName">
+                    <fa-icon fxFlex="8%" [icon]="['fa', 'lock']" matPrefix></fa-icon>
+                    <input fxFlex="8%" type="password" matInput placeholder="Password" formControlName="password">
+                </mat-form-field>
+            </form>
+        </div>
+    </div>
+</div>
